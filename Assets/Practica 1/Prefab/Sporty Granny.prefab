@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2e76a814ef2f2ba4aad4077e479e8099,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 6.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e76a814ef2f2ba4aad4077e479e8099,
         type: 3}
@@ -63,11 +63,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sporty Granny
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e76a814ef2f2ba4aad4077e479e8099,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pin
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 2e76a814ef2f2ba4aad4077e479e8099,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9630e442e3e44344492c77db921e851f, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 2e76a814ef2f2ba4aad4077e479e8099,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -80,6 +90,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8717593372192274816}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e76a814ef2f2ba4aad4077e479e8099,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2587693735379413494}
   m_SourcePrefab: {fileID: 100100000, guid: 2e76a814ef2f2ba4aad4077e479e8099, type: 3}
 --- !u!1 &2909345198068100522 stripped
 GameObject:
@@ -137,3 +151,15 @@ CapsuleCollider:
   m_Height: 2.03
   m_Direction: 1
   m_Center: {x: 0, y: 1.02, z: 0}
+--- !u!114 &2587693735379413494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2909345198068100522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6615dd0087aa6c4fa5ddc8441332e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

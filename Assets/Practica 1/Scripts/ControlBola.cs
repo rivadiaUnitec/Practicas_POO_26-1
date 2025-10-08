@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControlBola : MonoBehaviour
 {
-    public Transform CamaraPrincipal;
 
     public Rigidbody rb;
 
@@ -19,10 +19,23 @@ public class ControlBola : MonoBehaviour
 
     private bool haSidoLanzada = false;
 
+    // TODO: Referencia a la cámara y score
+    public CameraFollow cameraFollow;
+    public ScoreManager scoreManager;
+
+
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // PISTA: Obtener el componente Rigidbody de esta bola
+         rb = GetComponent<Rigidbody>();
+
+
     }
 
     // Update is called once per frame
@@ -64,10 +77,29 @@ public class ControlBola : MonoBehaviour
         haSidoLanzada = true;
         rb.AddForce(Vector3.forward * fuerzaDeLanzamiento);
 
-        if(CamaraPrincipal != null)
+        // PISTA: Iniciar seguimiento de la cámara (si existe)
+       if (cameraFollow != null) cameraFollow.IniciarSeguimiento();
+
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // PISTA: Si colisiona con un pino
+        if (collision.gameObject.CompareTag("Pin"))
         {
-            CamaraPrincipal.SetParent(transform); 
+            // PISTA: Detener seguimiento de cámara (si no es null)
+            if (cameraFollow != null) cameraFollow.DetenerSeguimiento();
+
+            // PISTA: Calcular puntaje tras un pequeño retraso
+             if (scoreManager != null) Invoke("CalcularPuntaje", 0f);
         }
     }
+
+    void CalcularPuntaje()
+    {
+        // PISTA: Llamar al ScoreManager para actualizar puntos
+         scoreManager.CalcularPuntaje();
+    }
+
 
 }// Bienvenido a la entrada al infierno
